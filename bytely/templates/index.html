@@ -1,0 +1,16 @@
+<html>
+    <head>
+    <title>Bytely?</title>
+    </head>
+    <body>
+        <h1>Bytely?</h1>
+    Wanna byte some url? :)
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button>Byte</button>
+        </form>
+        {% if short_url %}
+        <p>Your URL: <a href ="{{short_url}}">{{short_url}}</a> </p> Enjoy!
+        {% endif %}
+ </html>

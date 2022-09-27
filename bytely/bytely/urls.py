@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from urlshrt.views import redirector
+from urlshrt.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('<str:short_url>/', redirector),
+    path('', index)
 ]
